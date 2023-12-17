@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --first-color: #ea1f6c;
+  --white-color: #e9eaec;
+  --dark-color: #272023;
+
+  --body-font: 'Rethink Sans', sans-serif;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white-color);
+}
+
+.card {
+  width: 20rem;
+  height: 23rem;
+  background-color: var(--dark-color);
+  padding: 4rem 2rem 0;
+  border-radius: 0.5rem;
+  color: var(--white-color);
+  overflow-y: hidden;
+}
+
+.card__data {
+  text-align: center;
+  transform: translateY(11.5rem);
+}
+
+.card__img {
+  position: absolute;
+  width: 16rem;
+  filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
+}
+
+.card__title {
+  font-size: var(--h1-font-size);
+  font-weight: 700;
+  color: var(--first-color);
+  margin-bottom: 1rem;
+}
+
+.card__preci {
+  display: inline-block;
+  font-size: var(--h2-font-size);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.card__description {
+  font-size: var(--small-font-size);
+  margin-bottom: 1rem;
+  text-align: initial;
+  opacity: 0;
+}
+
+.card__button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 0.25rem;
+  transform: translateX(-4.5rem);
+  opacity: 0;
+}
+
+.card__img,
+.card__data,
+.card__title,
+.card__preci,
+.card__description,
+.card__button {
+  transition: 0.5s;
+}
+
+.card:hover .card__img {
+  transform: translate(-2rem, -10rem) rotate(-23deg);
+}
+.card:hover .card__data {
+  transform: translateY(3.5rem);
+}
+
+.card:hover .card__title {
+  transform: translateX(-3rem);
+  margin-bottom: 0.5rem;
+}
+
+.card:hover .card__preci {
+  transform: translateX(-7rem);
+  margin-bottom: 1rem;
+}
+
+.card:hover .card__description,
+.card:hover .card__button {
+  transition-delay: 0.2s;
+  opacity: 1;
+}
+
+.card__button:hover {
+  box-shadow: 0 18px 40px -12px rgba(234, 31, 108, 0.5);
+}
